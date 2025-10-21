@@ -12,9 +12,24 @@ const PlayerBanners: React.FC = () => {
   }
 
   const players = [
-    { name: 'Carlos Mendoza', position: 'Lanzador', stats: ['ERA: 2.45', 'Strikeouts: 120', 'Partidos: 25'] },
-    { name: 'Miguel Torres', position: 'Receptor', stats: ['Promedio: .285', 'Home Runs: 15', 'Partidos: 28'] },
-    { name: 'Diego Silva', position: 'Primera Base', stats: ['Promedio: .320', 'RBI: 45', 'Partidos: 30'] }
+    { 
+      name: 'Carlos Mendoza', 
+      position: 'Lanzador', 
+      stats: ['ERA: 2.45', 'Strikeouts: 120', 'Partidos: 25'],
+      backInfo: 'Lanzador estrella con más de 5 años de experiencia en la liga profesional'
+    },
+    { 
+      name: 'Miguel Torres', 
+      position: 'Receptor', 
+      stats: ['Promedio: .285', 'Home Runs: 15', 'Partidos: 28'],
+      backInfo: 'Receptor líder del equipo, conocido por su excelente trabajo detrás del plato'
+    },
+    { 
+      name: 'Diego Silva', 
+      position: 'Primera Base', 
+      stats: ['Promedio: .320', 'RBI: 45', 'Partidos: 30'],
+      backInfo: 'Primera base con gran poder ofensivo y defensa sólida en la esquina caliente'
+    }
   ]
 
   return (
@@ -38,18 +53,16 @@ const PlayerBanners: React.FC = () => {
             </div>
           </div>
 
-          {/* Cara trasera */}
-          <div className="banner-back">
-            <h3>{player.name}</h3>
-            <p>{player.position}</p>
-            <div className="stats">
-              {player.stats.map((stat, statIndex) => (
-                <div key={statIndex} className="stat-item">
-                  {stat}
+              {/* Cara trasera */}
+              <div className="banner-back">
+                <h3>Información del Jugador</h3>
+                <p className="player-description">{player.backInfo}</p>
+                <div className="achievements">
+                  <div className="achievement-item">⭐ Jugador Estrella</div>
+                  <div className="achievement-item">🏆 Líder del Equipo</div>
+                  <div className="achievement-item">⚾ Experiencia Profesional</div>
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
         </div>
       ))}
     </div>
