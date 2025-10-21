@@ -2,7 +2,6 @@ import React from 'react'
 import './styles/index.css'
 import EagleClaw from './components/EagleClaw'
 import EagleScratches from './components/EagleScratches'
-import FloatingParticles from './components/FloatingParticles'
 
 const App: React.FC = () => {
   return (
