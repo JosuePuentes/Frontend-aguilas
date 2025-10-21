@@ -18,7 +18,7 @@ const App: React.FC = () => {
                 </div>
                 <ul className="nav-links">
                   <li><a href="#home" className="nav-link active">
-                    <span className="nav-icon">🏠</span>
+                    <span className="nav-icon home-plate-icon">⚾</span>
                     <span className="nav-text">Home</span>
                   </a></li>
                   <li><a href="#noticias" className="nav-link">

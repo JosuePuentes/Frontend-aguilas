@@ -710,6 +710,22 @@ body {
   font-weight: 600;
 }
 
+.home-plate-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  border: 2px solid #ff6b35;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  position: relative;
+  font-size: 0.7rem;
+  line-height: 16px;
+  text-align: center;
+  color: #ff6b35;
+  font-weight: bold;
+}
+
 .login-btn {
   background-color: #ff6b35;
   color: #ffffff;
