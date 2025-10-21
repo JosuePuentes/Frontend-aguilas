@@ -1,0 +1,55 @@
+[1mdiff --git a/src/components/EagleSound.tsx b/src/components/EagleSound.tsx[m
+[1mindex 4f12512..4da7266 100644[m
+[1m--- a/src/components/EagleSound.tsx[m
+[1m+++ b/src/components/EagleSound.tsx[m
+[36m@@ -3,8 +3,8 @@[m [mimport React, { useEffect, useRef, useState } from 'react'[m
+ const EagleSound: React.FC = () => {[m
+   const audioContextRef = useRef<AudioContext | null>(null)[m
+   const [isMuted, setIsMuted] = useState(false)[m
+[31m-  const [hasPlayed, setIsHasPlayed] = useState(false)[m
+[31m-  const intervalRef = useRef<NodeJS.Timeout | null>(null)[m
+[32m+[m[32m  const [hasPlayed, setHasPlayed] = useState(false)[m
+[32m+[m[32m  const intervalRef = useRef<number | null>(null)[m
+ [m
+   // Función para crear el sonido de águila más realista[m
+   const createRealisticEagleCall = () => {[m
+[36m@@ -121,13 +121,13 @@[m [mconst EagleSound: React.FC = () => {[m
+ [m
+     // Solo crear el sonido si el usuario ha interactuado con la página[m
+     const handleUserInteraction = () => {[m
+[31m-      if (!setIsHasPlayed) {[m
+[32m+[m[32m      if (!hasPlayed) {[m
+         playSound()[m
+[31m-        setIsHasPlayed(true)[m
+[32m+[m[32m        setHasPlayed(true)[m
+         [m
+         // Configurar repetición cada 10-20 segundos[m
+         const startRepetition = () => {[m
+[31m-          intervalRef.current = setInterval(() => {[m
+[32m+[m[32m          intervalRef.current = window.setInterval(() => {[m
+             if (!isMuted) {[m
+               createRealisticEagleCall()[m
+             }[m
+[36m@@ -143,11 +143,11 @@[m [mconst EagleSound: React.FC = () => {[m
+     // Si es una recarga, reproducir inmediatamente[m
+     if (isPageReload) {[m
+       playSound()[m
+[31m-      setIsHasPlayed(true)[m
+[32m+[m[32m      setHasPlayed(true)[m
+       [m
+       // Configurar repetición[m
+       const startRepetition = () => {[m
+[31m-        intervalRef.current = setInterval(() => {[m
+[32m+[m[32m        intervalRef.current = window.setInterval(() => {[m
+           if (!isMuted) {[m
+             createRealisticEagleCall()[m
+           }[m
+[36m@@ -168,7 +168,7 @@[m [mconst EagleSound: React.FC = () => {[m
+         clearInterval(intervalRef.current)[m
+       }[m
+     }[m
+[31m-  }, [isMuted, setIsHasPlayed])[m
+[32m+[m[32m  }, [isMuted, hasPlayed])[m
+ [m
+   const toggleMute = () => {[m
+     setIsMuted(!isMuted)[m
