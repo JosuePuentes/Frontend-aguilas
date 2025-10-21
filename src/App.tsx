@@ -10,9 +10,9 @@ const App: React.FC = () => {
         <div className="container">
               <nav className="nav">
                 <div className="logo">
-                  <img 
-                    src="/images/claws/aguilas_del_zulia.png logo.png" 
-                    alt="Águilas del Zulia" 
+                  <img
+                    src="/images/claws/AguilasLogo2022-scaled.png"
+                    alt="Águilas del Zulia"
                     className="logo-image"
                   />
                 </div>
