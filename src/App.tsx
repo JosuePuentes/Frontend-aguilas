@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles/index.css'
 import VerticalBanners from './components/VerticalBanners'
+import PlayerBanners from './components/PlayerBanners'
 
 const App: React.FC = () => {
   return (
@@ -30,13 +31,8 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="container">
-          <h1>Bienvenidos a <span className="highlight">ÁGUILAS</span></h1>
-          <p>Tu destino para noticias, equipo, tienda y galería</p>
-        </div>
-      </section>
+      {/* Player Banners */}
+      <PlayerBanners />
 
       {/* Noticias Section */}
       <section id="noticias" className="section">
