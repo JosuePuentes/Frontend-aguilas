@@ -11,8 +11,14 @@ const App: React.FC = () => {
       {/* Header */}
       <header className="header">
         <div className="container">
-          <nav className="nav">
-            <div className="logo">ÁGUILAS</div>
+              <nav className="nav">
+                <div className="logo">
+                  <img 
+                    src="/images/claws/logo aguilas del zulia.jpg" 
+                    alt="Águilas del Zulia" 
+                    className="logo-image"
+                  />
+                </div>
             <ul className="nav-links">
               <li><a href="#noticias">Noticias</a></li>
               <li><a href="#equipo">Equipo</a></li>

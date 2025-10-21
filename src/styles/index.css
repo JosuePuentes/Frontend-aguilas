@@ -18,27 +18,125 @@ body {
   padding: 0 20px;
 }
 
-/* Realistic Paper Tearing Effect Styles */
-.paper-tearing-container {
+/* Realistic Eagle Effect with Real Images */
+.eagle-scratches-container {
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.3s ease;
 }
 
-.paper-tearing-container.entering {
-  animation: paperAppear 2s ease-out forwards;
+.eagle-scratches-container.entering {
+  animation: homepageAppear 2s ease-out forwards;
 }
 
-.paper-tearing-container.tearing {
-  animation: paperTear 3s ease-in-out forwards;
+.eagle-scratches-container.eagle-appearing {
+  animation: eagleEmerge 3s ease-in-out forwards;
 }
 
-.paper-tearing-container.revealing {
-  animation: eagleReveal 3s ease-in-out forwards;
+.eagle-scratches-container.claws-tearing {
+  animation: clawsTearHomepage 3s ease-in-out forwards;
 }
 
-.paper-tearing-container.leaving {
-  animation: paperDisappear 2s ease-in forwards;
+.eagle-scratches-container.leaving {
+  animation: effectDisappear 2s ease-in forwards;
+}
+
+/* Homepage Background with Orange Color from Logo */
+.homepage-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 50%, #ff8c42 100%);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.homepage-background.entering {
+  animation: homepageBackgroundAppear 2s ease-out forwards;
+}
+
+.homepage-background.eagle-appearing {
+  animation: homepageBackgroundEagle 3s ease-in-out forwards;
+}
+
+.homepage-background.claws-tearing {
+  animation: homepageBackgroundTear 3s ease-in-out forwards;
+}
+
+.homepage-background.leaving {
+  animation: homepageBackgroundDisappear 2s ease-in forwards;
+}
+
+/* Eagle Emerging from Hole */
+.eagle-emerging {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0) rotateY(180deg);
+  z-index: 1001;
+  animation: eagleFeatherRustle 6s ease-in-out infinite;
+}
+
+.eagle-emerging.entering {
+  opacity: 0;
+}
+
+.eagle-emerging.eagle-appearing {
+  animation: eagleEmergingAppear 3s ease-in-out forwards;
+}
+
+.eagle-emerging.claws-tearing {
+  animation: eagleEmergingTear 3s ease-in-out forwards;
+}
+
+.eagle-emerging.leaving {
+  animation: eagleEmergingDisappear 2s ease-in forwards;
+}
+
+.eagle-image {
+  width: 400px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+  animation: eagleHeadMovement 4s ease-in-out infinite;
+}
+
+/* Claws Breaking Homepage */
+.claws-breaking {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.5) translateY(-100px);
+  z-index: 1002;
+}
+
+.claws-breaking.entering {
+  opacity: 0;
+}
+
+.claws-breaking.eagle-appearing {
+  opacity: 0;
+}
+
+.claws-breaking.claws-tearing {
+  animation: clawsBreakingAppear 3s ease-in-out forwards;
+}
+
+.claws-breaking.leaving {
+  animation: clawsBreakingDisappear 2s ease-in forwards;
+}
+
+.claws-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 30px rgba(0,0,0,0.8));
 }
 
 /* Papel de fondo */
@@ -304,8 +402,8 @@ body {
   100% { opacity: 0; transform: scaleX(0) scaleY(0); }
 }
 
-/* Keyframes para el efecto de papel desgarrado */
-@keyframes paperAppear {
+/* Keyframes para el efecto realista con imágenes */
+@keyframes homepageAppear {
   0% {
     opacity: 0;
     transform: scale(0.8) rotateX(45deg);
@@ -316,7 +414,7 @@ body {
   }
 }
 
-@keyframes paperTear {
+@keyframes eagleEmerge {
   0% {
     transform: scale(1) rotateX(0deg);
   }
@@ -328,7 +426,7 @@ body {
   }
 }
 
-@keyframes eagleReveal {
+@keyframes clawsTearHomepage {
   0% {
     transform: scale(1.1) rotateX(0deg);
   }
@@ -340,7 +438,7 @@ body {
   }
 }
 
-@keyframes paperDisappear {
+@keyframes effectDisappear {
   0% {
     opacity: 1;
     transform: scale(1.2) rotateX(0deg);
@@ -348,6 +446,177 @@ body {
   100% {
     opacity: 0;
     transform: scale(0.8) rotateX(-45deg);
+  }
+}
+
+/* Homepage Background Animations */
+@keyframes homepageBackgroundAppear {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes homepageBackgroundEagle {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.02) skewY(2deg);
+  }
+  100% {
+    transform: scaleY(1.05) skewY(0deg);
+  }
+}
+
+@keyframes homepageBackgroundTear {
+  0% {
+    transform: scaleY(1.05) skewY(0deg);
+  }
+  50% {
+    transform: scaleY(1.08) skewY(-1deg);
+  }
+  100% {
+    transform: scaleY(1.1) skewY(0deg);
+  }
+}
+
+@keyframes homepageBackgroundDisappear {
+  0% {
+    opacity: 1;
+    transform: scaleY(1.1) skewY(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+/* Eagle Emerging Animations */
+@keyframes eagleEmergingAppear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0) rotateY(180deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(0.7) rotateY(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+  }
+}
+
+@keyframes eagleEmergingTear {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05) rotateY(5deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1) rotateY(0deg);
+  }
+}
+
+@keyframes eagleEmergingDisappear {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1) rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3) rotateY(-180deg);
+  }
+}
+
+/* Claws Breaking Animations */
+@keyframes clawsBreakingAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-100px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.8) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes clawsBreakingDisappear {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-100px);
+  }
+}
+
+/* Eagle Head Movement Animation */
+@keyframes eagleHeadMovement {
+  0% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+  }
+  15% {
+    transform: rotate(-2deg) scale(1.02);
+    filter: drop-shadow(2px 2px 25px rgba(0,0,0,0.6));
+  }
+  30% {
+    transform: rotate(1deg) scale(1.01);
+    filter: drop-shadow(-1px 1px 22px rgba(0,0,0,0.55));
+  }
+  45% {
+    transform: rotate(-1deg) scale(1.03);
+    filter: drop-shadow(1px -1px 28px rgba(0,0,0,0.65));
+  }
+  60% {
+    transform: rotate(2deg) scale(1.01);
+    filter: drop-shadow(-2px -1px 24px rgba(0,0,0,0.6));
+  }
+  75% {
+    transform: rotate(-1deg) scale(1.02);
+    filter: drop-shadow(1px 2px 26px rgba(0,0,0,0.62));
+  }
+  90% {
+    transform: rotate(1deg) scale(1.01);
+    filter: drop-shadow(-1px -2px 23px rgba(0,0,0,0.58));
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+  }
+}
+
+/* Eagle Feather Rustle Animation */
+@keyframes eagleFeatherRustle {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotateY(180deg) skewX(0deg);
+  }
+  20% {
+    transform: translate(-50%, -50%) scale(0) rotateY(180deg) skewX(1deg);
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(0) rotateY(180deg) skewX(-0.5deg);
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(0) rotateY(180deg) skewX(0.8deg);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(0) rotateY(180deg) skewX(-0.3deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0) rotateY(180deg) skewX(0deg);
   }
 }
 
@@ -615,9 +884,14 @@ body {
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ff6b35;
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-links {
