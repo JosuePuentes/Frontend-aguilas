@@ -3,66 +3,92 @@ import React, { useEffect, useRef, useState } from 'react'
 const EagleSound: React.FC = () => {
   const audioContextRef = useRef<AudioContext | null>(null)
   const [isMuted, setIsMuted] = useState(false)
-  const [hasPlayed, setHasPlayed] = useState(false)
+  const [hasPlayed, setIsHasPlayed] = useState(false)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
-  // Función para crear el sonido de águila
-  const createEagleCall = () => {
+  // Función para crear el sonido de águila más realista
+  const createRealisticEagleCall = () => {
     if (!audioContextRef.current || isMuted) return
 
     try {
       const audioContext = audioContextRef.current
       
-      // Crear osciladores para el sonido de águila
+      // Crear múltiples osciladores para un sonido más complejo y realista
       const oscillator1 = audioContext.createOscillator()
       const oscillator2 = audioContext.createOscillator()
       const oscillator3 = audioContext.createOscillator()
+      const oscillator4 = audioContext.createOscillator()
       
       const gainNode = audioContext.createGain()
       const filterNode = audioContext.createBiquadFilter()
+      const filterNode2 = audioContext.createBiquadFilter()
 
-      // Configurar filtro para sonido más natural
-      filterNode.type = 'bandpass'
-      filterNode.frequency.value = 800
-      filterNode.Q.value = 1
+      // Configurar filtros para sonido más natural
+      filterNode.type = 'lowpass'
+      filterNode.frequency.value = 1200
+      filterNode.Q.value = 2
 
-      // Configurar osciladores para crear un sonido de águila
+      filterNode2.type = 'highpass'
+      filterNode2.frequency.value = 200
+      filterNode2.Q.value = 1
+
+      // Configurar osciladores para crear un sonido de águila más realista
       oscillator1.type = 'sawtooth'
-      oscillator1.frequency.setValueAtTime(200, audioContext.currentTime)
-      oscillator1.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.5)
-      oscillator1.frequency.exponentialRampToValueAtTime(300, audioContext.currentTime + 1)
+      oscillator1.frequency.setValueAtTime(180, audioContext.currentTime)
+      oscillator1.frequency.exponentialRampToValueAtTime(350, audioContext.currentTime + 0.8)
+      oscillator1.frequency.exponentialRampToValueAtTime(280, audioContext.currentTime + 1.5)
+      oscillator1.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 2.2)
+      oscillator1.frequency.exponentialRampToValueAtTime(150, audioContext.currentTime + 3)
 
       oscillator2.type = 'triangle'
-      oscillator2.frequency.setValueAtTime(300, audioContext.currentTime)
-      oscillator2.frequency.exponentialRampToValueAtTime(600, audioContext.currentTime + 0.5)
-      oscillator2.frequency.exponentialRampToValueAtTime(450, audioContext.currentTime + 1)
+      oscillator2.frequency.setValueAtTime(250, audioContext.currentTime)
+      oscillator2.frequency.exponentialRampToValueAtTime(450, audioContext.currentTime + 0.8)
+      oscillator2.frequency.exponentialRampToValueAtTime(380, audioContext.currentTime + 1.5)
+      oscillator2.frequency.exponentialRampToValueAtTime(300, audioContext.currentTime + 2.2)
+      oscillator2.frequency.exponentialRampToValueAtTime(220, audioContext.currentTime + 3)
 
       oscillator3.type = 'sine'
-      oscillator3.frequency.setValueAtTime(150, audioContext.currentTime)
-      oscillator3.frequency.exponentialRampToValueAtTime(300, audioContext.currentTime + 0.5)
-      oscillator3.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 1)
+      oscillator3.frequency.setValueAtTime(120, audioContext.currentTime)
+      oscillator3.frequency.exponentialRampToValueAtTime(280, audioContext.currentTime + 0.8)
+      oscillator3.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 1.5)
+      oscillator3.frequency.exponentialRampToValueAtTime(160, audioContext.currentTime + 2.2)
+      oscillator3.frequency.exponentialRampToValueAtTime(100, audioContext.currentTime + 3)
 
-      // Configurar ganancia con envelope
+      oscillator4.type = 'square'
+      oscillator4.frequency.setValueAtTime(80, audioContext.currentTime)
+      oscillator4.frequency.exponentialRampToValueAtTime(150, audioContext.currentTime + 0.8)
+      oscillator4.frequency.exponentialRampToValueAtTime(120, audioContext.currentTime + 1.5)
+      oscillator4.frequency.exponentialRampToValueAtTime(90, audioContext.currentTime + 2.2)
+      oscillator4.frequency.exponentialRampToValueAtTime(60, audioContext.currentTime + 3)
+
+      // Configurar ganancia con envelope más complejo
       gainNode.gain.setValueAtTime(0, audioContext.currentTime)
-      gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.1)
-      gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.8)
-      gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 1.2)
+      gainNode.gain.linearRampToValueAtTime(0.4, audioContext.currentTime + 0.2)
+      gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 1.0)
+      gainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 1.8)
+      gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 2.5)
+      gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 3.2)
 
       // Conectar nodos
       oscillator1.connect(filterNode)
       oscillator2.connect(filterNode)
       oscillator3.connect(filterNode)
-      filterNode.connect(gainNode)
+      oscillator4.connect(filterNode)
+      filterNode.connect(filterNode2)
+      filterNode2.connect(gainNode)
       gainNode.connect(audioContext.destination)
 
       // Iniciar osciladores
       oscillator1.start(audioContext.currentTime)
       oscillator2.start(audioContext.currentTime)
       oscillator3.start(audioContext.currentTime)
+      oscillator4.start(audioContext.currentTime)
 
-      // Detener después de 1.5 segundos
-      oscillator1.stop(audioContext.currentTime + 1.5)
-      oscillator2.stop(audioContext.currentTime + 1.5)
-      oscillator3.stop(audioContext.currentTime + 1.5)
+      // Detener después de 3.5 segundos
+      oscillator1.stop(audioContext.currentTime + 3.5)
+      oscillator2.stop(audioContext.currentTime + 3.5)
+      oscillator3.stop(audioContext.currentTime + 3.5)
+      oscillator4.stop(audioContext.currentTime + 3.5)
     } catch (error) {
       console.log('Error playing eagle sound:', error)
     }
@@ -86,20 +112,29 @@ const EagleSound: React.FC = () => {
     // Inicializar audio inmediatamente
     initializeAudio()
 
-    // Reproducir sonido después de un pequeño delay
+    // Función para reproducir sonido
     const playSound = () => {
       if (!isMuted) {
-        setTimeout(() => {
-          createEagleCall()
-          setHasPlayed(true)
-        }, isPageReload ? 500 : 1000) // Sonido más rápido en recarga
+        createRealisticEagleCall()
       }
     }
 
     // Solo crear el sonido si el usuario ha interactuado con la página
     const handleUserInteraction = () => {
-      if (!hasPlayed) {
+      if (!setIsHasPlayed) {
         playSound()
+        setIsHasPlayed(true)
+        
+        // Configurar repetición cada 10-20 segundos
+        const startRepetition = () => {
+          intervalRef.current = setInterval(() => {
+            if (!isMuted) {
+              createRealisticEagleCall()
+            }
+          }, Math.random() * 10000 + 10000) // Entre 10 y 20 segundos
+        }
+        
+        setTimeout(startRepetition, 3000) // Empezar repetición después del primer sonido
       }
       document.removeEventListener('click', handleUserInteraction)
       document.removeEventListener('keydown', handleUserInteraction)
@@ -108,6 +143,18 @@ const EagleSound: React.FC = () => {
     // Si es una recarga, reproducir inmediatamente
     if (isPageReload) {
       playSound()
+      setIsHasPlayed(true)
+      
+      // Configurar repetición
+      const startRepetition = () => {
+        intervalRef.current = setInterval(() => {
+          if (!isMuted) {
+            createRealisticEagleCall()
+          }
+        }, Math.random() * 10000 + 10000) // Entre 10 y 20 segundos
+      }
+      
+      setTimeout(startRepetition, 3000)
     } else {
       // Si es carga inicial, esperar interacción del usuario
       document.addEventListener('click', handleUserInteraction)
@@ -117,11 +164,17 @@ const EagleSound: React.FC = () => {
     return () => {
       document.removeEventListener('click', handleUserInteraction)
       document.removeEventListener('keydown', handleUserInteraction)
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
     }
-  }, [isMuted, hasPlayed])
+  }, [isMuted, setIsHasPlayed])
 
   const toggleMute = () => {
     setIsMuted(!isMuted)
+    if (!isMuted && intervalRef.current) {
+      clearInterval(intervalRef.current)
+    }
   }
 
   return (

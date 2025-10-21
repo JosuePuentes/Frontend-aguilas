@@ -2,108 +2,99 @@ import React, { useEffect, useState } from 'react'
 
 const EagleClaw: React.FC<{ position: string; delay?: number }> = ({ position, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false)
-  const [isScrollTriggered, setIsScrollTriggered] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true)
     }, delay)
 
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      const windowHeight = window.innerHeight
-      
-      // Trigger claw animations based on scroll position
-      if (scrollPosition > windowHeight * 0.2) {
-        setIsScrollTriggered(true)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    
-    return () => {
-      clearTimeout(timer)
-      window.removeEventListener('scroll', handleScroll)
-    }
+    return () => clearTimeout(timer)
   }, [delay])
 
-  const clawSVG = (
+  const adultEagleClawSVG = (
     <svg 
-      width="120" 
-      height="120" 
-      viewBox="0 0 120 120" 
+      width="300" 
+      height="300" 
+      viewBox="0 0 300 300" 
       className="claw-svg"
     >
       <defs>
-        <linearGradient id="clawGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#00ffff" />
-          <stop offset="50%" stopColor="#ff00ff" />
-          <stop offset="100%" stopColor="#00ffff" />
+        <linearGradient id="adultClawGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#8B4513" />
+          <stop offset="30%" stopColor="#A0522D" />
+          <stop offset="70%" stopColor="#8B4513" />
+          <stop offset="100%" stopColor="#654321" />
         </linearGradient>
-        <filter id="clawShadow">
-          <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#00ffff"/>
-          <feDropShadow dx="0" dy="0" stdDeviation="6" floodColor="#ff00ff"/>
+        <filter id="adultClawShadow">
+          <feDropShadow dx="2" dy="2" stdDeviation="3" floodColor="#000000" floodOpacity="0.5"/>
         </filter>
       </defs>
       
-      {/* Claw Base */}
+      {/* Main Claw Base - Adult Eagle */}
       <path
-        d="M60 20 C70 15, 80 25, 85 35 C90 45, 85 55, 80 65 C75 75, 65 80, 55 75 C45 70, 40 60, 45 50 C50 40, 55 30, 60 20 Z"
-        fill="url(#clawGradient)"
-        filter="url(#clawShadow)"
+        d="M150 50 C180 40, 220 60, 240 90 C260 120, 250 150, 230 180 C210 210, 180 220, 150 210 C120 200, 100 180, 110 150 C120 120, 130 90, 150 50 Z"
+        fill="url(#adultClawGradient)"
+        filter="url(#adultClawShadow)"
         opacity="0.9"
       />
       
-      {/* Talon 1 */}
+      {/* Large Talon 1 - Adult Eagle */}
       <path
-        d="M75 40 C80 35, 85 40, 88 45 C90 50, 88 55, 85 60 C82 65, 77 67, 72 65 C67 63, 65 58, 67 53 C69 48, 72 43, 75 40 Z"
-        fill="url(#clawGradient)"
-        filter="url(#clawShadow)"
+        d="M200 100 C220 90, 240 100, 250 120 C260 140, 255 160, 240 175 C225 190, 205 195, 185 185 C165 175, 160 155, 170 135 C180 115, 190 105, 200 100 Z"
+        fill="url(#adultClawGradient)"
+        filter="url(#adultClawShadow)"
         opacity="0.8"
       />
       
-      {/* Talon 2 */}
+      {/* Large Talon 2 - Adult Eagle */}
       <path
-        d="M65 30 C70 25, 75 30, 78 35 C80 40, 78 45, 75 50 C72 55, 67 57, 62 55 C57 53, 55 48, 57 43 C59 38, 62 33, 65 30 Z"
-        fill="url(#clawGradient)"
-        filter="url(#clawShadow)"
+        d="M180 80 C200 70, 220 80, 230 100 C240 120, 235 140, 220 155 C205 170, 185 175, 165 165 C145 155, 140 135, 150 115 C160 95, 170 85, 180 80 Z"
+        fill="url(#adultClawGradient)"
+        filter="url(#adultClawShadow)"
         opacity="0.8"
       />
       
-      {/* Talon 3 */}
+      {/* Large Talon 3 - Adult Eagle */}
       <path
-        d="M55 30 C50 25, 45 30, 42 35 C40 40, 42 45, 45 50 C48 55, 53 57, 58 55 C63 53, 65 48, 63 43 C61 38, 58 33, 55 30 Z"
-        fill="url(#clawGradient)"
-        filter="url(#clawShadow)"
+        d="M120 80 C100 70, 80 80, 70 100 C60 120, 65 140, 80 155 C95 170, 115 175, 135 165 C155 155, 160 135, 150 115 C140 95, 130 85, 120 80 Z"
+        fill="url(#adultClawGradient)"
+        filter="url(#adultClawShadow)"
         opacity="0.8"
       />
       
-      {/* Talon 4 */}
+      {/* Large Talon 4 - Adult Eagle */}
       <path
-        d="M45 40 C40 35, 35 40, 32 45 C30 50, 32 55, 35 60 C38 65, 43 67, 48 65 C53 63, 55 58, 53 53 C51 48, 48 43, 45 40 Z"
-        fill="url(#clawGradient)"
-        filter="url(#clawShadow)"
+        d="M100 100 C80 90, 60 100, 50 120 C40 140, 45 160, 60 175 C75 190, 95 195, 115 185 C135 175, 140 155, 130 135 C120 115, 110 105, 100 100 Z"
+        fill="url(#adultClawGradient)"
+        filter="url(#adultClawShadow)"
         opacity="0.8"
       />
       
-      {/* Claw Details */}
-      <circle cx="60" cy="50" r="3" fill="#ffffff" opacity="0.6" />
-      <circle cx="70" cy="45" r="2" fill="#ffffff" opacity="0.5" />
-      <circle cx="50" cy="45" r="2" fill="#ffffff" opacity="0.5" />
+      {/* Claw Details - Adult Eagle */}
+      <circle cx="150" cy="130" r="4" fill="#654321" opacity="0.7" />
+      <circle cx="200" cy="120" r="3" fill="#654321" opacity="0.6" />
+      <circle cx="100" cy="120" r="3" fill="#654321" opacity="0.6" />
       
-      {/* Claw Texture Lines */}
-      <path d="M55 25 L65 25" stroke="#ffffff" strokeWidth="1" opacity="0.4" />
-      <path d="M50 35 L70 35" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
-      <path d="M45 45 L75 45" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
+      {/* Claw Texture Lines - Adult Eagle */}
+      <path d="M140 60 L160 60" stroke="#654321" strokeWidth="2" opacity="0.4" />
+      <path d="M130 80 L170 80" stroke="#654321" strokeWidth="2" opacity="0.3" />
+      <path d="M120 100 L180 100" stroke="#654321" strokeWidth="2" opacity="0.3" />
+      <path d="M110 120 L190 120" stroke="#654321" strokeWidth="2" opacity="0.3" />
+      
+      {/* Claw Tips - Adult Eagle */}
+      <path d="M245 125 L255 135" stroke="#654321" strokeWidth="3" opacity="0.8" />
+      <path d="M225 105 L235 115" stroke="#654321" strokeWidth="3" opacity="0.8" />
+      <path d="M75 105 L65 115" stroke="#654321" strokeWidth="3" opacity="0.8" />
+      <path d="M55 125 L45 135" stroke="#654321" strokeWidth="3" opacity="0.8" />
     </svg>
   )
 
   return (
     <div 
-      className={`eagle-claw ${position} ${isVisible ? 'visible' : ''} ${isScrollTriggered ? 'scroll-triggered' : ''}`}
-      style={{ '--rotation': position.includes('left') ? '-15deg' : '15deg', '--scale': position.includes('bottom') ? '0.6' : '0.8' } as React.CSSProperties}
+      className={`eagle-claw ${position} ${isVisible ? 'visible' : ''}`}
+      style={{ '--rotation': position.includes('watermark-2') ? '25deg' : position.includes('watermark-3') ? '45deg' : '-15deg', '--scale': '2.5' } as React.CSSProperties}
     >
-      {clawSVG}
+      {adultEagleClawSVG}
     </div>
   )
 }

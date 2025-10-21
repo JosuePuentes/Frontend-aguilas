@@ -13,12 +13,10 @@ const App: React.FC = () => {
       {/* Floating Particles */}
       <FloatingParticles />
       
-      {/* Eagle Claws */}
-      <EagleClaw position="claw-left" delay={500} />
-      <EagleClaw position="claw-right" delay={1000} />
-      <EagleClaw position="claw-bottom-left" delay={1500} />
-      <EagleClaw position="claw-bottom-right" delay={2000} />
-      <EagleClaw position="claw-center" delay={2500} />
+      {/* Eagle Claws - Watermark Style */}
+      <EagleClaw position="claw-watermark-1" delay={1000} />
+      <EagleClaw position="claw-watermark-2" delay={2000} />
+      <EagleClaw position="claw-watermark-3" delay={3000} />
 
       {/* Header */}
       <header className="header">
@@ -71,28 +69,28 @@ const App: React.FC = () => {
           <h2 className="section-title">Nuestro <span className="accent">Equipo</span></h2>
           <div className="team-grid">
             <div className="team-card">
-              <div style={{width: '150px', height: '150px', background: 'linear-gradient(45deg, #00ffff, #ff00ff)', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold', boxShadow: '0 0 20px #00ffff'}}>
+              <div style={{width: '150px', height: '150px', backgroundColor: '#ff6b35', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold'}}>
                 J1
               </div>
               <h3>Jugador 1</h3>
               <p>Delantero</p>
             </div>
             <div className="team-card">
-              <div style={{width: '150px', height: '150px', background: 'linear-gradient(45deg, #ff00ff, #00ffff)', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold', boxShadow: '0 0 20px #ff00ff'}}>
+              <div style={{width: '150px', height: '150px', backgroundColor: '#ff6b35', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold'}}>
                 J2
               </div>
               <h3>Jugador 2</h3>
               <p>Mediocampista</p>
             </div>
             <div className="team-card">
-              <div style={{width: '150px', height: '150px', background: 'linear-gradient(45deg, #00ffff, #ff00ff)', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold', boxShadow: '0 0 20px #00ffff'}}>
+              <div style={{width: '150px', height: '150px', backgroundColor: '#ff6b35', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold'}}>
                 J3
               </div>
               <h3>Jugador 3</h3>
               <p>Defensor</p>
             </div>
             <div className="team-card">
-              <div style={{width: '150px', height: '150px', background: 'linear-gradient(45deg, #ff00ff, #00ffff)', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold', boxShadow: '0 0 20px #ff00ff'}}>
+              <div style={{width: '150px', height: '150px', backgroundColor: '#ff6b35', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold'}}>
                 J4
               </div>
               <h3>Jugador 4</h3>
@@ -108,7 +106,7 @@ const App: React.FC = () => {
           <h2 className="section-title">Nuestra <span className="accent">Tienda</span></h2>
           <div className="shop-grid">
             <div className="product-card">
-              <div style={{width: '100%', height: '200px', background: 'linear-gradient(45deg, #00ffff, #ff00ff)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '2rem', fontWeight: 'bold', boxShadow: '0 0 20px #00ffff'}}>
+              <div style={{width: '100%', height: '200px', backgroundColor: '#ff6b35', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '2rem', fontWeight: 'bold'}}>
                 CAMISETA
               </div>
               <div className="product-info">
