@@ -18,135 +18,140 @@ body {
   padding: 0 20px;
 }
 
-/* Holographic Eagle Claws 3D Styles */
-.eagle-scratches-container {
-  animation: holographicFlicker 0.1s infinite alternate;
+/* Realistic Paper Tearing Effect Styles */
+.paper-tearing-container {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
 }
 
-.eagle-scratches-container.entering {
-  animation: holographicAppear 2s ease-out forwards, holographicFlicker 0.1s infinite alternate;
+.paper-tearing-container.entering {
+  animation: paperAppear 2s ease-out forwards;
 }
 
-.eagle-scratches-container.scratching {
-  animation: holographicScratch 4s ease-in-out forwards, holographicFlicker 0.05s infinite alternate;
+.paper-tearing-container.tearing {
+  animation: paperTear 3s ease-in-out forwards;
 }
 
-.eagle-scratches-container.leaving {
-  animation: holographicDisappear 2s ease-in forwards, holographicFlicker 0.1s infinite alternate;
+.paper-tearing-container.revealing {
+  animation: eagleReveal 3s ease-in-out forwards;
 }
 
-.claw-group {
+.paper-tearing-container.leaving {
+  animation: paperDisappear 2s ease-in forwards;
+}
+
+/* Papel de fondo */
+.paper-background {
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.paper-background.entering {
+  animation: paperBackgroundAppear 2s ease-out forwards;
+}
+
+.paper-background.tearing {
+  animation: paperBackgroundTear 3s ease-in-out forwards;
+}
+
+.paper-background.revealing {
+  animation: paperBackgroundReveal 3s ease-in-out forwards;
+}
+
+.paper-background.leaving {
+  animation: paperBackgroundDisappear 2s ease-in forwards;
+}
+
+/* Textura de papel */
+.paper-texture {
+  opacity: 0;
+}
+
+.paper-texture.entering {
+  animation: paperTextureAppear 2s ease-out forwards;
+}
+
+.paper-texture.tearing {
+  animation: paperTextureTear 3s ease-in-out forwards;
+}
+
+.paper-texture.revealing {
+  animation: paperTextureReveal 3s ease-in-out forwards;
+}
+
+.paper-texture.leaving {
+  animation: paperTextureDisappear 2s ease-in forwards;
+}
+
+/* Garras orgánicas */
+.organic-claws {
+  opacity: 0;
+  transform: translateY(-100px) scale(0.5);
+  transform-origin: top;
+}
+
+.organic-claws.entering {
+  animation: organicClawsAppear 2s ease-out forwards;
+}
+
+.organic-claws.tearing {
+  animation: organicClawsTear 3s ease-in-out forwards;
+}
+
+.organic-claws.revealing {
+  animation: organicClawsReveal 3s ease-in-out forwards;
+}
+
+.organic-claws.leaving {
+  animation: organicClawsDisappear 2s ease-in forwards;
+}
+
+/* Desgarros del papel */
+.paper-tears {
+  opacity: 0;
+  transform: scaleX(0);
   transform-origin: center;
 }
 
-.claw-group.entering {
-  animation: clawAppearFromBehind 2s ease-out forwards;
-}
-
-.claw-group.scratching {
-  animation: clawTearScreen 4s ease-in-out infinite;
-}
-
-.claw-group.leaving {
-  animation: clawDisappearBehind 2s ease-in forwards;
-}
-
-.holographic-scratch-effects.entering {
+.paper-tears.entering {
   opacity: 0;
-  animation: holographicScratchAppear 2s ease-out forwards;
 }
 
-.holographic-scratch-effects.scratching {
-  animation: holographicScratchIntensify 4s ease-in-out infinite;
+.paper-tears.tearing {
+  animation: paperTearsAppear 3s ease-in-out forwards;
 }
 
-.holographic-scratch-effects.leaving {
-  animation: holographicScratchDisappear 2s ease-in forwards;
+.paper-tears.revealing {
+  animation: paperTearsReveal 3s ease-in-out forwards;
 }
 
-/* Broken Homepage Effect */
-.broken-homepage-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  zIndex: 999;
-  pointerEvents: none;
-  overflow: hidden;
+.paper-tears.leaving {
+  animation: paperTearsDisappear 2s ease-in forwards;
 }
 
-.crack {
-  position: absolute;
-  background: linear-gradient(45deg, 
-    rgba(0,0,0,0.8) 0%, 
-    rgba(255,100,0,0.6) 50%, 
-    rgba(0,0,0,0.8) 100%);
-  animation: crackAppear 0.5s ease-out forwards;
+/* Cara del águila */
+.eagle-face {
+  opacity: 0;
+  transform: scale(0.3) rotateY(180deg);
+  transform-origin: center;
 }
 
-.crack-1 {
-  top: 0;
-  left: 20%;
-  width: 2px;
-  height: 100vh;
-  animation-delay: 0.1s;
+.eagle-face.entering {
+  opacity: 0;
 }
 
-.crack-2 {
-  top: 0;
-  left: 40%;
-  width: 2px;
-  height: 100vh;
-  animation-delay: 0.2s;
+.eagle-face.tearing {
+  opacity: 0;
 }
 
-.crack-3 {
-  top: 0;
-  left: 60%;
-  width: 2px;
-  height: 100vh;
-  animation-delay: 0.3s;
+.eagle-face.revealing {
+  animation: eagleFaceReveal 3s ease-in-out forwards;
 }
 
-.crack-4 {
-  top: 0;
-  left: 80%;
-  width: 2px;
-  height: 100vh;
-  animation-delay: 0.4s;
-}
-
-.crack-5 {
-  top: 20%;
-  left: 0;
-  width: 100vw;
-  height: 2px;
-  animation-delay: 0.5s;
-}
-
-.crack-6 {
-  top: 40%;
-  left: 0;
-  width: 100vw;
-  height: 2px;
-  animation-delay: 0.6s;
-}
-
-.crack-7 {
-  top: 60%;
-  left: 0;
-  width: 100vw;
-  height: 2px;
-  animation-delay: 0.7s;
-}
-
-.crack-8 {
-  top: 80%;
-  left: 0;
-  width: 100vw;
-  height: 2px;
-  animation-delay: 0.8s;
+.eagle-face.leaving {
+  animation: eagleFaceDisappear 2s ease-in forwards;
 }
 
 /* Player Avatar Styles */
@@ -299,14 +304,261 @@ body {
   100% { opacity: 0; transform: scaleX(0) scaleY(0); }
 }
 
-@keyframes crackAppear {
-  0% { 
-    opacity: 0; 
+/* Keyframes para el efecto de papel desgarrado */
+@keyframes paperAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotateX(45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+  }
+}
+
+@keyframes paperTear {
+  0% {
+    transform: scale(1) rotateX(0deg);
+  }
+  50% {
+    transform: scale(1.05) rotateX(5deg);
+  }
+  100% {
+    transform: scale(1.1) rotateX(0deg);
+  }
+}
+
+@keyframes eagleReveal {
+  0% {
+    transform: scale(1.1) rotateX(0deg);
+  }
+  50% {
+    transform: scale(1.15) rotateX(-5deg);
+  }
+  100% {
+    transform: scale(1.2) rotateX(0deg);
+  }
+}
+
+@keyframes paperDisappear {
+  0% {
+    opacity: 1;
+    transform: scale(1.2) rotateX(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) rotateX(-45deg);
+  }
+}
+
+@keyframes paperBackgroundAppear {
+  0% {
+    opacity: 0;
     transform: scaleY(0);
   }
-  100% { 
-    opacity: 1; 
+  100% {
+    opacity: 1;
     transform: scaleY(1);
+  }
+}
+
+@keyframes paperBackgroundTear {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.02) skewY(2deg);
+  }
+  100% {
+    transform: scaleY(1.05) skewY(0deg);
+  }
+}
+
+@keyframes paperBackgroundReveal {
+  0% {
+    transform: scaleY(1.05) skewY(0deg);
+  }
+  50% {
+    transform: scaleY(1.08) skewY(-1deg);
+  }
+  100% {
+    transform: scaleY(1.1) skewY(0deg);
+  }
+}
+
+@keyframes paperBackgroundDisappear {
+  0% {
+    opacity: 1;
+    transform: scaleY(1.1) skewY(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes paperTextureAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes paperTextureTear {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes paperTextureReveal {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes paperTextureDisappear {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes organicClawsAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-20px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes organicClawsTear {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(5px) scale(1.02);
+  }
+  50% {
+    transform: translateY(10px) scale(1.05);
+  }
+  75% {
+    transform: translateY(5px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes organicClawsReveal {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.03);
+  }
+  100% {
+    transform: translateY(0) scale(1.05);
+  }
+}
+
+@keyframes organicClawsDisappear {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.5);
+  }
+}
+
+@keyframes paperTearsAppear {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scaleX(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes paperTearsReveal {
+  0% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleX(1.05);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scaleX(1.1);
+  }
+}
+
+@keyframes paperTearsDisappear {
+  0% {
+    opacity: 0.6;
+    transform: scaleX(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes eagleFaceReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotateY(180deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.7) rotateY(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+@keyframes eagleFaceDisappear {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3) rotateY(-180deg);
   }
 }
 
