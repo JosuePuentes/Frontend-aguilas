@@ -11,7 +11,7 @@ const App: React.FC = () => {
       <EagleScratches />
       
       {/* Floating Particles */}
-      <FloatingParticles />
+      {/* <FloatingParticles /> */}
       
       {/* Eagle Claws - Watermark Style */}
       <EagleClaw position="claw-watermark-1" delay={1000} />
@@ -69,29 +69,29 @@ const App: React.FC = () => {
           <h2 className="section-title">Nuestro <span className="accent">Equipo</span></h2>
           <div className="team-grid">
             <div className="team-card">
-              <div style={{width: '150px', height: '150px', backgroundColor: '#ff6b35', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold'}}>
-                J1
+              <div className="player-avatar">
+                <span>J1</span>
               </div>
               <h3>Jugador 1</h3>
               <p>Delantero</p>
             </div>
             <div className="team-card">
-              <div style={{width: '150px', height: '150px', backgroundColor: '#ff6b35', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold'}}>
-                J2
+              <div className="player-avatar">
+                <span>J2</span>
               </div>
               <h3>Jugador 2</h3>
               <p>Mediocampista</p>
             </div>
             <div className="team-card">
-              <div style={{width: '150px', height: '150px', backgroundColor: '#ff6b35', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold'}}>
-                J3
+              <div className="player-avatar">
+                <span>J3</span>
               </div>
               <h3>Jugador 3</h3>
               <p>Defensor</p>
             </div>
             <div className="team-card">
-              <div style={{width: '150px', height: '150px', backgroundColor: '#ff6b35', borderRadius: '50%', margin: '0 auto 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: '3rem', fontWeight: 'bold'}}>
-                J4
+              <div className="player-avatar">
+                <span>J4</span>
               </div>
               <h3>Jugador 4</h3>
               <p>Portero</p>
