@@ -1,6 +1,5 @@
 import React from 'react'
 import './styles/index.css'
-import EagleClaw from './components/EagleClaw'
 import EagleScratches from './components/EagleScratches'
 
 const App: React.FC = () => {
@@ -8,14 +7,6 @@ const App: React.FC = () => {
     <div className="App">
       {/* Holographic Eagle Scratches */}
       <EagleScratches />
-      
-      {/* Floating Particles */}
-      {/* <FloatingParticles /> */}
-      
-      {/* Eagle Claws - Watermark Style */}
-      <EagleClaw position="claw-watermark-1" delay={1000} />
-      <EagleClaw position="claw-watermark-2" delay={2000} />
-      <EagleClaw position="claw-watermark-3" delay={3000} />
 
       {/* Header */}
       <header className="header">

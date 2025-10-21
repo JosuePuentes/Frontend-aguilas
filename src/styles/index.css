@@ -591,53 +591,6 @@ body {
   color: #cccccc;
 }
 
-/* Eagle Claws - Watermark Style */
-.eagle-claw {
-  position: fixed;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.1;
-  transition: opacity 0.8s ease;
-}
-
-.eagle-claw.visible {
-  opacity: 0.15;
-}
-
-.claw-watermark-1 {
-  top: 10%;
-  left: -10%;
-  transform: rotate(-15deg) scale(2.5);
-  animation: watermarkFloat 20s ease-in-out infinite;
-}
-
-.claw-watermark-2 {
-  top: 60%;
-  right: -15%;
-  transform: rotate(25deg) scale(2.8);
-  animation: watermarkFloat 25s ease-in-out infinite reverse;
-}
-
-.claw-watermark-3 {
-  bottom: 20%;
-  left: 5%;
-  transform: rotate(45deg) scale(2.2);
-  animation: watermarkFloat 30s ease-in-out infinite;
-}
-
-@keyframes watermarkFloat {
-  0%, 100% {
-    transform: translateY(0px) rotate(var(--rotation, 0deg)) scale(var(--scale, 1));
-  }
-  50% {
-    transform: translateY(-30px) rotate(var(--rotation, 0deg)) scale(var(--scale, 1));
-  }
-}
-
-/* Claw SVG Styles */
-.claw-svg {
-  filter: drop-shadow(0 0 5px rgba(255, 107, 53, 0.3));
-}
 
 /* Responsive */
 @media (max-width: 768px) {
