@@ -14,7 +14,7 @@ const App: React.FC = () => {
               <nav className="nav">
                 <div className="logo">
                   <img 
-                    src="/images/claws/logo aguilas del zulia.jpg" 
+                    src="/images/claws/aguilas_del_zulia.png" 
                     alt="Águilas del Zulia" 
                     className="logo-image"
                   />

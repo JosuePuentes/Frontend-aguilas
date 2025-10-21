@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 50%, #ff8c42 100%);
+  background: linear-gradient(135deg, #1a237e 0%, #3f51b5 25%, #2196f3 50%, #00bcd4 75%, #4caf50 100%);
   color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
@@ -19,7 +19,7 @@ body {
   padding: 0 20px;
 }
 
-/* Realistic Eagle Effect with Real Images */
+/* Logo Effect with Brand Colors */
 .eagle-scratches-container {
   opacity: 0;
   transform: scale(0.8);
@@ -30,26 +30,22 @@ body {
   animation: homepageAppear 2s ease-out forwards;
 }
 
-.eagle-scratches-container.eagle-appearing {
-  animation: eagleEmerge 3s ease-in-out forwards;
-}
-
-.eagle-scratches-container.claws-tearing {
-  animation: clawsTearHomepage 3s ease-in-out forwards;
+.eagle-scratches-container.logo-appearing {
+  animation: logoEmerge 4s ease-in-out forwards;
 }
 
 .eagle-scratches-container.leaving {
   animation: effectDisappear 2s ease-in forwards;
 }
 
-/* Homepage Background with Orange Color from Logo */
+/* Homepage Background with Brand Colors from Logo */
 .homepage-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 50%, #ff8c42 100%);
+  background: linear-gradient(135deg, #1a237e 0%, #3f51b5 25%, #2196f3 50%, #00bcd4 75%, #4caf50 100%);
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top;
@@ -59,85 +55,41 @@ body {
   animation: homepageBackgroundAppear 2s ease-out forwards;
 }
 
-.homepage-background.eagle-appearing {
-  animation: homepageBackgroundEagle 3s ease-in-out forwards;
-}
-
-.homepage-background.claws-tearing {
-  animation: homepageBackgroundTear 3s ease-in-out forwards;
+.homepage-background.logo-appearing {
+  animation: homepageBackgroundLogo 4s ease-in-out forwards;
 }
 
 .homepage-background.leaving {
   animation: homepageBackgroundDisappear 2s ease-in forwards;
 }
 
-/* Eagle Emerging from Hole */
-.eagle-emerging {
+/* Logo Emerging */
+.logo-emerging {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0) rotateY(180deg);
   z-index: 1001;
-  animation: eagleFeatherRustle 6s ease-in-out infinite;
 }
 
-.eagle-emerging.entering {
+.logo-emerging.entering {
   opacity: 0;
 }
 
-.eagle-emerging.eagle-appearing {
-  animation: eagleEmergingAppear 3s ease-in-out forwards;
+.logo-emerging.logo-appearing {
+  animation: logoEmergingAppear 4s ease-in-out forwards;
 }
 
-.eagle-emerging.claws-tearing {
-  animation: eagleEmergingTear 3s ease-in-out forwards;
+.logo-emerging.leaving {
+  animation: logoEmergingDisappear 2s ease-in forwards;
 }
 
-.eagle-emerging.leaving {
-  animation: eagleEmergingDisappear 2s ease-in forwards;
-}
-
-.eagle-image {
-  width: 400px;
+.logo-image-effect {
+  width: 500px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
-  animation: eagleHeadMovement 4s ease-in-out infinite;
-}
-
-/* Claws Breaking Homepage */
-.claws-breaking {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: scale(0.5) translateY(-100px);
-  z-index: 1002;
-}
-
-.claws-breaking.entering {
-  opacity: 0;
-}
-
-.claws-breaking.eagle-appearing {
-  opacity: 0;
-}
-
-.claws-breaking.claws-tearing {
-  animation: clawsBreakingAppear 3s ease-in-out forwards;
-}
-
-.claws-breaking.leaving {
-  animation: clawsBreakingDisappear 2s ease-in forwards;
-}
-
-.claws-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: drop-shadow(0 0 30px rgba(0,0,0,0.8));
+  filter: drop-shadow(0 0 30px rgba(255,255,255,0.8));
+  animation: logoGlow 3s ease-in-out infinite;
 }
 
 /* Papel de fondo */
@@ -403,7 +355,7 @@ body {
   100% { opacity: 0; transform: scaleX(0) scaleY(0); }
 }
 
-/* Keyframes para el efecto realista con imágenes */
+/* Keyframes para el efecto del logo */
 @keyframes homepageAppear {
   0% {
     opacity: 0;
@@ -415,7 +367,7 @@ body {
   }
 }
 
-@keyframes eagleEmerge {
+@keyframes logoEmerge {
   0% {
     transform: scale(1) rotateX(0deg);
   }
@@ -427,26 +379,26 @@ body {
   }
 }
 
-@keyframes clawsTearHomepage {
-  0% {
-    transform: scale(1.1) rotateX(0deg);
-  }
-  50% {
-    transform: scale(1.15) rotateX(-5deg);
-  }
-  100% {
-    transform: scale(1.2) rotateX(0deg);
-  }
-}
-
 @keyframes effectDisappear {
   0% {
     opacity: 1;
-    transform: scale(1.2) rotateX(0deg);
+    transform: scale(1.1) rotateX(0deg);
   }
   100% {
     opacity: 0;
     transform: scale(0.8) rotateX(-45deg);
+  }
+}
+
+@keyframes logoGlow {
+  0% {
+    filter: drop-shadow(0 0 30px rgba(255,255,255,0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 50px rgba(0,188,212,0.9));
+  }
+  100% {
+    filter: drop-shadow(0 0 30px rgba(255,255,255,0.8));
   }
 }
 
@@ -462,7 +414,7 @@ body {
   }
 }
 
-@keyframes homepageBackgroundEagle {
+@keyframes homepageBackgroundLogo {
   0% {
     transform: scaleY(1);
   }
@@ -474,22 +426,10 @@ body {
   }
 }
 
-@keyframes homepageBackgroundTear {
-  0% {
-    transform: scaleY(1.05) skewY(0deg);
-  }
-  50% {
-    transform: scaleY(1.08) skewY(-1deg);
-  }
-  100% {
-    transform: scaleY(1.1) skewY(0deg);
-  }
-}
-
 @keyframes homepageBackgroundDisappear {
   0% {
     opacity: 1;
-    transform: scaleY(1.1) skewY(0deg);
+    transform: scaleY(1.05) skewY(0deg);
   }
   100% {
     opacity: 0;
@@ -497,8 +437,8 @@ body {
   }
 }
 
-/* Eagle Emerging Animations */
-@keyframes eagleEmergingAppear {
+/* Logo Emerging Animations */
+@keyframes logoEmergingAppear {
   0% {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0) rotateY(180deg);
@@ -513,22 +453,10 @@ body {
   }
 }
 
-@keyframes eagleEmergingTear {
-  0% {
-    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.05) rotateY(5deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.1) rotateY(0deg);
-  }
-}
-
-@keyframes eagleEmergingDisappear {
+@keyframes logoEmergingDisappear {
   0% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1.1) rotateY(0deg);
+    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
   }
   100% {
     opacity: 0;
@@ -870,10 +798,10 @@ body {
 
 /* Header Styles */
 .header {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(26, 35, 126, 0.9);
   backdrop-filter: blur(10px);
   padding: 1rem 0;
-  border-bottom: 3px solid #ff6b35;
+  border-bottom: 3px solid #2196f3;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -913,12 +841,12 @@ body {
 }
 
 .nav-links a:hover {
-  color: #ff6b35;
+  color: #00bcd4;
 }
 
 .login-btn {
-  background-color: #ff6b35;
-  color: #000000;
+  background-color: #2196f3;
+  color: #ffffff;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 5px;
@@ -928,8 +856,8 @@ body {
 }
 
 .login-btn:hover {
-  background-color: #ffffff;
-  color: #ff6b35;
+  background-color: #00bcd4;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -947,7 +875,7 @@ body {
 }
 
 .hero h1 .highlight {
-  color: #ff6b35;
+  color: #00bcd4;
 }
 
 .hero p {
@@ -969,7 +897,7 @@ body {
 }
 
 .section-title .accent {
-  color: #ff6b35;
+  color: #00bcd4;
 }
 
 /* News Section */
@@ -989,12 +917,12 @@ body {
 }
 
 .news-card:hover {
-  border-color: #ff6b35;
+  border-color: #00bcd4;
   transform: translateY(-5px);
 }
 
 .news-card h3 {
-  color: #ff6b35;
+  color: #00bcd4;
   margin-bottom: 1rem;
 }
 
@@ -1020,16 +948,16 @@ body {
 }
 
 .team-card:hover {
-  border-color: #ff6b35;
+  border-color: #00bcd4;
   transform: translateY(-5px);
 }
 
-.team-card img {
+.player-avatar {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   margin-bottom: 1rem;
-  border: 3px solid #ff6b35;
+  border: 3px solid #00bcd4;
 }
 
 .team-card h3 {
@@ -1038,7 +966,7 @@ body {
 }
 
 .team-card p {
-  color: #ff6b35;
+  color: #00bcd4;
   font-weight: bold;
 }
 
@@ -1059,7 +987,7 @@ body {
 }
 
 .product-card:hover {
-  border-color: #ff6b35;
+  border-color: #00bcd4;
   transform: translateY(-5px);
 }
 
@@ -1079,7 +1007,7 @@ body {
 }
 
 .product-info p {
-  color: #ff6b35;
+  color: #00bcd4;
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -1100,7 +1028,7 @@ body {
 }
 
 .gallery-item:hover {
-  border-color: #ff6b35;
+  border-color: #00bcd4;
   transform: scale(1.05);
 }
 
@@ -1115,7 +1043,7 @@ body {
   background-color: #1a1a1a;
   padding: 2rem 0;
   text-align: center;
-  border-top: 2px solid #ff6b35;
+  border-top: 2px solid #00bcd4;
 }
 
 .footer p {
