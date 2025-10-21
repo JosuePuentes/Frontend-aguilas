@@ -1,14 +1,10 @@
 import React from 'react'
 import './styles/index.css'
-import VerticalBanners from './components/VerticalBanners'
 import PlayerBanners from './components/PlayerBanners'
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      {/* Vertical Banners */}
-      <VerticalBanners />
-
       {/* Header */}
       <header className="header">
         <div className="container">
