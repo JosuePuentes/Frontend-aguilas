@@ -655,15 +655,16 @@ body {
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  gap: 0.3rem;
+  padding: 0.5rem 1rem;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  font-size: 0.9rem;
 }
 
 .nav-link::before {
@@ -674,7 +675,7 @@ body {
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, #ff6b35 0%, #ffa500 100%);
-  clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 80% 50%, 100% 100%, 0 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
@@ -696,16 +697,16 @@ body {
 }
 
 .nav-icon {
-  font-size: 1.2rem;
+  font-size: 1rem;
   transition: transform 0.3s ease;
 }
 
 .nav-link:hover .nav-icon {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .nav-text {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
@@ -741,6 +742,19 @@ body {
 
 .section-title .accent {
   color: #ffa500;
+}
+
+.welcome-content {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.welcome-content p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 /* News Section */
@@ -1061,7 +1075,10 @@ body {
   padding: 2rem;
 }
 
-.banner-back * {
+.banner-back h3,
+.banner-back p,
+.banner-back .stats,
+.banner-back .stat-item {
   transform: rotateY(180deg);
 }
 

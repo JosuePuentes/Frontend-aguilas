@@ -12,9 +12,9 @@ const PlayerBanners: React.FC = () => {
   }
 
   const players = [
-    { name: 'Carlos Mendoza', position: 'Delantero', stats: ['Goles: 15', 'Asistencias: 8', 'Partidos: 25'] },
-    { name: 'Miguel Torres', position: 'Mediocampista', stats: ['Pases: 450', 'Recuperaciones: 120', 'Partidos: 28'] },
-    { name: 'Diego Silva', position: 'Defensor', stats: ['Entradas: 85', 'Despejes: 200', 'Partidos: 30'] }
+    { name: 'Carlos Mendoza', position: 'Lanzador', stats: ['ERA: 2.45', 'Strikeouts: 120', 'Partidos: 25'] },
+    { name: 'Miguel Torres', position: 'Receptor', stats: ['Promedio: .285', 'Home Runs: 15', 'Partidos: 28'] },
+    { name: 'Diego Silva', position: 'Primera Base', stats: ['Promedio: .320', 'RBI: 45', 'Partidos: 30'] }
   ]
 
   return (

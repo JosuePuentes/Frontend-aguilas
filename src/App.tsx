@@ -18,23 +18,27 @@ const App: React.FC = () => {
                 </div>
                 <ul className="nav-links">
                   <li><a href="#home" className="nav-link active">
-                    <span className="nav-icon">🏠</span>
+                    <span className="nav-icon">⚾</span>
                     <span className="nav-text">Home</span>
+                  </a></li>
+                  <li><a href="#noticias" className="nav-link">
+                    <span className="nav-icon">📰</span>
+                    <span className="nav-text">Noticias</span>
                   </a></li>
                   <li><a href="#equipo" className="nav-link">
                     <span className="nav-icon">👥</span>
                     <span className="nav-text">Roster</span>
                   </a></li>
                   <li><a href="#tienda" className="nav-link">
-                    <span className="nav-icon">🛒</span>
+                    <span className="nav-icon">👕</span>
                     <span className="nav-text">Tienda</span>
                   </a></li>
                   <li><a href="#galeria" className="nav-link">
-                    <span className="nav-icon">📅</span>
+                    <span className="nav-icon">🎫</span>
                     <span className="nav-text">Calendario</span>
                   </a></li>
                   <li><a href="#estadisticas" className="nav-link">
-                    <span className="nav-icon">📊</span>
+                    <span className="nav-icon">⚾</span>
                     <span className="nav-text">Estadísticas</span>
                   </a></li>
                 </ul>
@@ -49,7 +53,17 @@ const App: React.FC = () => {
       {/* Home Section */}
       <section id="home" className="section">
         <div className="container">
-          <h2 className="section-title">Bienvenidos a <span className="accent">ÁGUILAS</span></h2>
+          <h2 className="section-title">Play <span className="accent">Ball</span></h2>
+          <div className="welcome-content">
+            <p>Tu destino para noticias, equipo, tienda y estadísticas del mejor equipo de béisbol.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Noticias Section */}
+      <section id="noticias" className="section">
+        <div className="container">
+          <h2 className="section-title">Últimas <span className="accent">Noticias</span></h2>
           <div className="news-grid">
             <div className="news-card">
               <h3>Nueva Temporada</h3>
@@ -77,28 +91,28 @@ const App: React.FC = () => {
                 <span>J1</span>
               </div>
               <h3>Jugador 1</h3>
-              <p>Delantero</p>
+              <p>Lanzador</p>
             </div>
             <div className="team-card">
               <div className="player-avatar">
                 <span>J2</span>
               </div>
               <h3>Jugador 2</h3>
-              <p>Mediocampista</p>
+              <p>Receptor</p>
             </div>
             <div className="team-card">
               <div className="player-avatar">
                 <span>J3</span>
               </div>
               <h3>Jugador 3</h3>
-              <p>Defensor</p>
+              <p>Primera Base</p>
             </div>
             <div className="team-card">
               <div className="player-avatar">
                 <span>J4</span>
               </div>
               <h3>Jugador 4</h3>
-              <p>Portero</p>
+              <p>Campo Corto</p>
             </div>
           </div>
         </div>
