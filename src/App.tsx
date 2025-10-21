@@ -16,12 +16,28 @@ const App: React.FC = () => {
                     className="logo-image"
                   />
                 </div>
-            <ul className="nav-links">
-              <li><a href="#noticias">Noticias</a></li>
-              <li><a href="#equipo">Equipo</a></li>
-              <li><a href="#tienda">Tienda</a></li>
-              <li><a href="#galeria">Galería</a></li>
-            </ul>
+                <ul className="nav-links">
+                  <li><a href="#home" className="nav-link active">
+                    <span className="nav-icon">🏠</span>
+                    <span className="nav-text">Home</span>
+                  </a></li>
+                  <li><a href="#equipo" className="nav-link">
+                    <span className="nav-icon">👥</span>
+                    <span className="nav-text">Roster</span>
+                  </a></li>
+                  <li><a href="#tienda" className="nav-link">
+                    <span className="nav-icon">🛒</span>
+                    <span className="nav-text">Tienda</span>
+                  </a></li>
+                  <li><a href="#galeria" className="nav-link">
+                    <span className="nav-icon">📅</span>
+                    <span className="nav-text">Calendario</span>
+                  </a></li>
+                  <li><a href="#estadisticas" className="nav-link">
+                    <span className="nav-icon">📊</span>
+                    <span className="nav-text">Estadísticas</span>
+                  </a></li>
+                </ul>
             <button className="login-btn">Iniciar Sesión</button>
           </nav>
         </div>
@@ -30,10 +46,10 @@ const App: React.FC = () => {
       {/* Player Banners */}
       <PlayerBanners />
 
-      {/* Noticias Section */}
-      <section id="noticias" className="section">
+      {/* Home Section */}
+      <section id="home" className="section">
         <div className="container">
-          <h2 className="section-title">Últimas <span className="accent">Noticias</span></h2>
+          <h2 className="section-title">Bienvenidos a <span className="accent">ÁGUILAS</span></h2>
           <div className="news-grid">
             <div className="news-card">
               <h3>Nueva Temporada</h3>
@@ -51,10 +67,10 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Equipo Section */}
+      {/* Roster Section */}
       <section id="equipo" className="section">
         <div className="container">
-          <h2 className="section-title">Nuestro <span className="accent">Equipo</span></h2>
+          <h2 className="section-title">Nuestro <span className="accent">Roster</span></h2>
           <div className="team-grid">
             <div className="team-card">
               <div className="player-avatar">
@@ -133,10 +149,10 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Galería Section */}
+      {/* Calendario Section */}
       <section id="galeria" className="section">
         <div className="container">
-          <h2 className="section-title">Galería de <span className="accent">Fotos</span></h2>
+          <h2 className="section-title">Calendario de <span className="accent">Partidos</span></h2>
           <div className="gallery-grid">
             <div className="gallery-item">
               <div style={{width: '100%', height: '200px', backgroundColor: '#333', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ff6b35', fontSize: '1.5rem'}}>
@@ -167,6 +183,31 @@ const App: React.FC = () => {
               <div style={{width: '100%', height: '200px', backgroundColor: '#333', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ff6b35', fontSize: '1.5rem'}}>
                 Foto 6
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Estadísticas Section */}
+      <section id="estadisticas" className="section">
+        <div className="container">
+          <h2 className="section-title">Estadísticas del <span className="accent">Equipo</span></h2>
+          <div className="stats-grid">
+            <div className="stat-card">
+              <h3>🏆 Victorias</h3>
+              <p className="stat-number">15</p>
+            </div>
+            <div className="stat-card">
+              <h3>⚾ Promedio</h3>
+              <p className="stat-number">.285</p>
+            </div>
+            <div className="stat-card">
+              <h3>🎯 ERA</h3>
+              <p className="stat-number">3.45</p>
+            </div>
+            <div className="stat-card">
+              <h3>🔥 Home Runs</h3>
+              <p className="stat-number">42</p>
             </div>
           </div>
         </div>
