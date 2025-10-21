@@ -50,15 +50,21 @@ const App: React.FC = () => {
       {/* Player Banners */}
       <PlayerBanners />
 
-      {/* Home Section */}
-      <section id="home" className="section">
-        <div className="container">
-          <h2 className="section-title">Play <span className="accent">Ball</span></h2>
-          <div className="welcome-content">
-            <p>Tu destino para noticias, equipo, tienda y estadísticas del mejor equipo de béisbol.</p>
-          </div>
-        </div>
-      </section>
+          {/* Home Section */}
+          <section id="home" className="section">
+            <div className="container">
+              <h2 className="section-title">Play <span className="accent">Ball</span></h2>
+              <div className="welcome-content">
+                <p>Tu destino para noticias, equipo, tienda y estadísticas del mejor equipo de béisbol.</p>
+                <div className="home-plate-container">
+                  <div className="home-plate">
+                    <div className="home-plate-text">HOME</div>
+                  </div>
+                  <p className="home-plate-description">El plato de home donde los jugadores anotan carreras</p>
+                </div>
+              </div>
+            </div>
+          </section>
 
       {/* Noticias Section */}
       <section id="noticias" className="section">
