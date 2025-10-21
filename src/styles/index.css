@@ -872,7 +872,7 @@ body {
 .header {
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   border-bottom: 3px solid #ff6b35;
   position: sticky;
   top: 0;
@@ -891,12 +891,12 @@ body {
 }
 
 .logo-image {
-  height: 100px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   /* Quitar fondo del logo */
   background: transparent;
-  filter: drop-shadow(0 0 15px rgba(255, 107, 53, 0.4));
+  filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.3));
 }
 
 .nav-links {
