@@ -1,12 +1,12 @@
 import React from 'react'
 import './styles/index.css'
-import EagleScratches from './components/EagleScratches'
+import VerticalBanners from './components/VerticalBanners'
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      {/* Holographic Eagle Scratches */}
-      <EagleScratches />
+      {/* Vertical Banners */}
+      <VerticalBanners />
 
       {/* Header */}
       <header className="header">
@@ -14,7 +14,7 @@ const App: React.FC = () => {
               <nav className="nav">
                 <div className="logo">
                   <img 
-                    src="/images/claws/aguilas_del_zulia.png" 
+                    src="/images/claws/aguilas_del_zulia.png logo.png" 
                     alt="Águilas del Zulia" 
                     className="logo-image"
                   />
