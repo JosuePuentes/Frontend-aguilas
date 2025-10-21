@@ -81,7 +81,7 @@ const EagleSound: React.FC = () => {
 
     // Detectar si es una recarga de página
     const isPageReload = performance.navigation?.type === 1 || 
-                        performance.getEntriesByType('navigation')[0]?.type === 'reload'
+                        (performance.getEntriesByType('navigation')[0] as any)?.type === 'reload'
 
     // Inicializar audio inmediatamente
     initializeAudio()
