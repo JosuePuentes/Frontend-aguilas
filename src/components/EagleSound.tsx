@@ -3,8 +3,8 @@ import React, { useEffect, useRef, useState } from 'react'
 const EagleSound: React.FC = () => {
   const audioContextRef = useRef<AudioContext | null>(null)
   const [isMuted, setIsMuted] = useState(false)
-  const [hasPlayed, setIsHasPlayed] = useState(false)
-  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const [hasPlayed, setHasPlayed] = useState(false)
+  const intervalRef = useRef<number | null>(null)
 
   // Función para crear el sonido de águila más realista
   const createRealisticEagleCall = () => {
@@ -121,13 +121,13 @@ const EagleSound: React.FC = () => {
 
     // Solo crear el sonido si el usuario ha interactuado con la página
     const handleUserInteraction = () => {
-      if (!setIsHasPlayed) {
+      if (!hasPlayed) {
         playSound()
-        setIsHasPlayed(true)
+        setHasPlayed(true)
         
         // Configurar repetición cada 10-20 segundos
         const startRepetition = () => {
-          intervalRef.current = setInterval(() => {
+          intervalRef.current = window.setInterval(() => {
             if (!isMuted) {
               createRealisticEagleCall()
             }
@@ -143,11 +143,11 @@ const EagleSound: React.FC = () => {
     // Si es una recarga, reproducir inmediatamente
     if (isPageReload) {
       playSound()
-      setIsHasPlayed(true)
+      setHasPlayed(true)
       
       // Configurar repetición
       const startRepetition = () => {
-        intervalRef.current = setInterval(() => {
+        intervalRef.current = window.setInterval(() => {
           if (!isMuted) {
             createRealisticEagleCall()
           }
@@ -168,7 +168,7 @@ const EagleSound: React.FC = () => {
         clearInterval(intervalRef.current)
       }
     }
-  }, [isMuted, setIsHasPlayed])
+  }, [isMuted, hasPlayed])
 
   const toggleMute = () => {
     setIsMuted(!isMuted)
